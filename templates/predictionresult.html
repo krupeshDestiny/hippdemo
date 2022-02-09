@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block title %} Prediction {% endblock %}
 {% block content %} 
-<div class="container" style="padding:3%;">
+<div class="container" style="padding:1%;">
   <h1 style="color: #337ab7; text-align: center;">Health Insurance Price Prediction</h1>
   <br/>
   <form id="myForm" name="myForm" action="/Prediction" method='post'>
@@ -17,7 +17,7 @@
             <td><label for="prediction " class="text-uppercase font-weight-bold">{{Price}}</label></td>
         </tr>
     </table>
-    <a class="nav-link btn btn-info"  href="/Prediction" role="button">Make New Prediction</a>
+    <a class="nav-link btn btn-info"  href="/Prediction" role="button" style="width:100%; color: #fff; background-color: #337ab7; border: none;font-size: larger;">Make New Prediction</a>
     <!-- <input type="button" oncl style="width:100%; color: #fff; background-color: #337ab7; border: none;font-size: 20px;"> -->
   </form>
 </div>

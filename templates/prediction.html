@@ -2,6 +2,9 @@
 {% block title %} User Details  {% endblock %}
 {% block style %} 
 <style>
+  .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
+    background-color: #337ab7 !important;
+}
   table, th, td {
   padding: 5px;
 }
@@ -24,7 +27,7 @@ input::-webkit-input-placeholder {
 </style>
 {% endblock %}
 {% block content %} 
-<div class="container" style="padding:3%;">
+<div class="container" style="padding:1%;">
   <h1 style="color: #337ab7; text-align: center;">Health Insurance Price Prediction Form</h1>
   <br/>
   <form id="myForm" name="myForm" action="/submit" onsubmit="return validateForm()" method='post'>
@@ -46,10 +49,10 @@ input::-webkit-input-placeholder {
         <td>:</td>
         <td class="input-group">
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-primary active">
+            <label class="btn btn-default active">
               <input type="radio" name="sex" id="radioMale" value="male"checked> Male
             </label>
-            <label class="btn btn-primary">
+            <label class="btn btn-default">
               <input type="radio" name="sex" id="radioFemale" value="female"> Female
             </label>
           </div>
@@ -82,10 +85,10 @@ input::-webkit-input-placeholder {
         <td>:</td>
         <td class="input-group">
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-primary active">
+            <label class="btn btn-default active">
               <input type="radio" name="smoker" id="radioNo" value="no" checked> No
             </label>
-            <label class="btn btn-primary">
+            <label class="btn btn-default">
               <input type="radio" name="smoker" id="radioYes" value="yes"> Yes
             </label>
           </div>
@@ -103,7 +106,7 @@ input::-webkit-input-placeholder {
       </tr>
     </table>
     <div style="margin-top: 15px;">
-      <input class="btn" type="submit" value="Predict the Insurence Price" style="width:100%; color: #fff; background-color: #337ab7; border: none;font-size: 20px;">
+      <input class="btn" type="submit" value="Predict the Insurence Price" style="width:100%; color: #fff; background-color: #337ab7; border: none;font-size: larger;">
     </div>
   </form>
 </div>
