@@ -2,32 +2,37 @@
 {% block title %} User Details  {% endblock %}
 {% block style %} 
 <style>
-  .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
+.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active 
+{
     background-color: #337ab7 !important;
 }
-  table, th, td {
+table, th, td 
+{
   padding: 5px;
 }
-table {
+table 
+{
   border-spacing: 15px;
 }
 tr {
   margin-bottom: 10px;
 }
-input {
+input 
+{
     width: 400px;
     padding: 0 20px;
 }
 
 input,
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder 
+{
     font-size: 20px;
     line-height: 3;
 }
 </style>
 {% endblock %}
 {% block content %} 
-<div class="container" style="padding:1%;">
+<div class="container" style="padding:3%;">
   <h1 style="color: #337ab7; text-align: center;">Health Insurance Price Prediction Form</h1>
   <br/>
   <form id="myForm" name="myForm" action="/submit" onsubmit="return validateForm()" method='post'>
@@ -37,13 +42,6 @@ input::-webkit-input-placeholder {
         <td>:</td>
         <td><input type="number" class="form-control input-lg" id="txtage" name="age" placeholder="Enter age" required></td>
       </tr>
-      <!-- <tr>
-        <td><label for="sex">Sex</label></td>
-        <td>:</td>
-        <td class="input-group"><div class="custom-control custom-radio"><input type="radio" id="radioMale" name="sex" id="male" value="male" class="custom-control-input" checked><label class="custom-control-label" for="radioMale">Male</label></div>
-        <div style="margin-left: 15px;" class="custom-control custom-radio"><input type="radio" id="radioFemale" name="sex" id="female" value="female" class="custom-control-input"><label class="custom-control-label" for="radioFemale">Female</label>
-        </div></td>
-      </tr> -->
       <tr>
         <td><label for="sex">Sex</label></td>
         <td>:</td>
@@ -73,13 +71,6 @@ input::-webkit-input-placeholder {
         <td>:</td>
         <td><input type="number" class="form-control" id="children" name="children"  placeholder="Enter no. of children" pattern="[0-9]+" required></td>
       </tr>
-      <!-- <tr>
-        <td><label for="smoker ">Smoker</label></td>
-        <td>:</td>
-        <td class="input-group"><div class="custom-control custom-radio"><input type="radio" id="radioNo" name="smoker" id="no" value="no" class="custom-control-input" checked><label class="custom-control-label" for="radioNo">No</label></div>
-          <div style="margin-left: 15px;" class="custom-control custom-radio"><input type="radio" id="radioYes" name="smoker" id="yes" value="yes" class="custom-control-input"><label class="custom-control-label" for="radioYes">Yes</label>
-        </div></td>
-      </tr> -->
       <tr>
         <td><label for="smoker ">Smoker</label></td>
         <td>:</td>
@@ -114,12 +105,6 @@ input::-webkit-input-placeholder {
 
 {% block script %} 
 <script type="text/javascript">
-  // $('#txtbmi').keyup(function(e) {
-  //   var regex = /^\d+(\.\d{0,2})?$/g;
-  //   if (!regex.test(this.value)) {
-  //       this.value = '';
-  //   }
-  // });
   function validateForm() {
     let age = document.forms["myForm"]["age"].value;
     let sex = document.forms["myForm"]["sex"].value;
