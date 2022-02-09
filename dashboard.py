@@ -1,6 +1,3 @@
-# from doctest import master
-# from logging import root
-# from tkinter import Canvas
 from flask import Blueprint, render_template, redirect, url_for, send_file
 from io import BytesIO
 import pandas as pd
@@ -13,61 +10,9 @@ dashboard = Blueprint("Dashboard", __name__)
 @dashboard.route('/')
 @dashboard.route('/home')
 def index():
-    # render_template(url_for("dashboard/smoker"))
     return render_template("dashboard.html")
 
 insurance_dataset = pd.read_csv("./insurance.csv")
-
-# @dashboard.route("/<argument>")
-# def dashboardHome(argument):
-#     print("1")
-#     fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4, figsize=(8,8))
-#     print("2")
-#     if argument == "ageDistribution":
-#         print(1)
-#         ageDistribution()
-#         ax1.set_title('Age Distribution')
-#         # ax1. title('Age Distribution')
-#     elif argument == "sexDistribution" :
-#         gender()
-#         ax2.title('Sex Distribution')
-#         "gender"
-#     elif argument == "bmiDistribution" :
-#         gender()
-#         ax3.title('BMI Distribution')
-#     elif argument == "children" :
-#         gender()
-#         ax4.title('Children')
-#         "gender"
-#     else :
-#         # axs[0,0] = ageDistribution()
-#         sns.distplot(insurance_dataset['age'])
-#         ax1.set_title('Age Distribution')
-#         print("Age Distribution")
-
-#         # axs[0,1] = gender()
-#         sns.countplot(x='sex', data=insurance_dataset)
-#         ax2.set_title('Sex Distribution')
-#         print("gender Distribution")
-    
-#         # axs[1,0] = bmiDistribution()
-#         sns.distplot(insurance_dataset['bmi'])
-#         ax3.set_title('BMI Distribution')
-#         print("BMI Distribution")
-
-#         # axs[1,1] = children()
-#         sns.countplot(x='children', data=insurance_dataset)
-#         ax4.set_title('Children')
-#         print("Children Distribution")
-#         finalfig = plt.figure
-#     print("3")
-#     finalfig = BytesIO()
-#     print("3")
-#     plt.savefig(finalfig)
-#     print("3")
-#     finalfig.seek(0)
-#     print("3")
-#     return send_file(finalfig, mimetype="img/png")
 
 @dashboard.route("/<argument>")
 def dashboardHome(argument):
@@ -112,12 +57,10 @@ def dashboardHome(argument):
         regions_count = [region1.count(),region2.count(),region3.count(),region4.count()]
     
         print(regions_count)
-        # ax2.pie(regions_count,labels = regions)
         ax2.set_title('Region')
 
         # Creating color parameters
         colors = ( "orange", "cyan", "brown","grey")
-        # Creating explode data
         explode = (0.1, 0.0, 0.2, 0.3)
         wp = { 'linewidth' : 1, 'edgecolor' : "green" }
 
@@ -168,9 +111,3 @@ def dashboardHome(argument):
     plt.savefig(finalfig)
     finalfig.seek(0)
     return send_file(finalfig, mimetype="img/png")
-  
-
-# @dashboard.route('/<name>')
-# def user(name):
-#     # redirect(url_for("index"))
-#     return f"Hello {name}!"
